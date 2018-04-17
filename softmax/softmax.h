@@ -1,8 +1,8 @@
-#ifndef POOL_H
-#define POOL_H
+#ifndef SOFTMAX_H
+#define SOFTMAX_H
 
-typedef ihc::stream_in<int> input_score_stream;
-typedef ihc::stream_out<int> output_score_stream;
+typedef ihc::stream_in<float> input_score_stream;
+typedef ihc::stream_out<float> output_score_stream;
 
-component void softmax(input_score_stream& original_score, output_score_stream& softmax_score);
+component void softmax(int num, input_score_stream& original_score, output_score_stream& softmax_score);
 #endif
