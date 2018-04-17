@@ -3,10 +3,6 @@
 #include "HLS/stdio.h"
 
 component void matrix_conv(int rows, int cols, input_image_stream& original_image, output_image_stream& conv_image, float k[][3]){
-    /*
-    unsigned int** a = new unsigned int* [rows];
-    for(int i = 0;i < cols;i++) a[i] = new unsigned int [cols];
-    */
     unsigned int a[1000][1000];
     for(int i = 0;i < rows;i++){
         for(int j = 0;j < cols;j++){
@@ -27,9 +23,4 @@ component void matrix_conv(int rows, int cols, input_image_stream& original_imag
             conv_image.write(sum);
         }
     }
-    /*
-    for(int i = 0;i < rows;i++)
-           delete[] a[i];
-    delete[] a;
-    */
 }
